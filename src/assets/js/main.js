@@ -152,7 +152,7 @@ function mobileMenuFunctionality() {
 		closeMobileMenu();
 	});
 }
-
+``
 window.openMobileMenu = () => {
 	document.getElementById("openMenu").classList.add("hidden");
 	document.getElementById("closeMenu").classList.remove("hidden");

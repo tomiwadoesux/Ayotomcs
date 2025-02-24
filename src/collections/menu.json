@@ -4,15 +4,15 @@
 		"url": "/"
 	},
 	{
-		"name": "Posts",
-		"url": "/posts"
-	},
-	{
 		"name": "Projects",
 		"url": "/projects"
 	},
 	{
-		"name": "About",
-		"url": "/about"
+		"name": "Writings",
+		"url": "/posts"
+	},
+	{
+		"name": "Resume",
+		"url": "https://drive.google.com/file/d/1UcuH-oolA0c_vMYflzil6Dl1_EnEnOxd/view"
 	}
 ]
