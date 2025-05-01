@@ -19,7 +19,8 @@ const sortedStuffs = allStuffs
 const stuffsLoop = sortedStuffs.slice(0, count).map((stuff) => {
   return {
     ...(stuff.data || {}),
-    link: stuff.data.linkOverride || `/stuff/${stuff.slug}`,  };
+    link: `/stuff/${stuff.slug}`,
+  };
 });
 ---
 
