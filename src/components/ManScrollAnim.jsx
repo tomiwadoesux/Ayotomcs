@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-export default function ManScroll() {
+export default function ManScrollAnim() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
