@@ -1,14 +1,8 @@
 ---
-"use client"
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-// Register ScrollTrigger plugin (server-side import for type safety)
-gsap.registerPlugin(ScrollTrigger);
+import ManScroll from "../components/ManScroll.jsx";
 ---
 
-
-
+<ManScroll client:load />
 
 <div class="container">
   <svg width="auto" height="100%" viewBox="0 0 180 212" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -106,61 +100,6 @@ gsap.registerPlugin(ScrollTrigger);
     
 </div>
 
-<script is:inline client:load>
-  console.log('ManScroll script started');
 
-  // Load GSAP and ScrollTrigger from CDN
-  const loadScripts = () => {
-    return new Promise((resolve, reject) => {
-      // Load GSAP
-      const gsapScript = document.createElement('script');
-      gsapScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
-      gsapScript.onload = () => {
-        console.log('GSAP loaded from CDN');
-
-        // Load ScrollTrigger
-        const scrollTriggerScript = document.createElement('script');
-        scrollTriggerScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
-        scrollTriggerScript.onload = () => {
-          console.log('ScrollTrigger loaded from CDN');
-          resolve();
-        };
-        scrollTriggerScript.onerror = () => reject(new Error('Failed to load ScrollTrigger'));
-        document.head.appendChild(scrollTriggerScript);
-      };
-      gsapScript.onerror = () => reject(new Error('Failed to load GSAP'));
-      document.head.appendChild(gsapScript);
-    });
-  };
-
-  // Run animation after scripts load
-  loadScripts()
-    .then(() => {
-      const { gsap, ScrollTrigger } = window;
-      gsap.registerPlugin(ScrollTrigger);
-
-      console.log('Attempting to find #man element');
-      const man = document.querySelector('#man');
-      if (!man) {
-        console.error('Element with id="man" not found');
-        return;
-      }
-
-      console.log('Found #man element, starting animation');
-
-      gsap.to(man, {
-        y: 300, // Move down 100 units
-        ease: 'none',
-        scrollTrigger: {
-          trigger: 'body',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
-          markers: false, // Set to true for debugging
-        },
-      });
-    })
-    .catch(err => console.error('Script loading error:', err));
-</script>
 
 
