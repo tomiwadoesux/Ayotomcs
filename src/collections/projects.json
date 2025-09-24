@@ -12,6 +12,13 @@
 		"url": "https://olaoluwa-ak.vercel.app/"
 	},
 		{
+		"name": "v123 | A Portfolio Project",
+		"description": "Figma | Next.js | GSAP" ,
+		"image": "/assets/images/projects/v123.png",
+		"url": "https://v123.ayotomcs.me/"
+	},
+
+		{
 		"name": "Swav Barbers",
 		"description": "Figma",
 		"image": "/assets/images/projects/swav.png",
